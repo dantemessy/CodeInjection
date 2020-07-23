@@ -17,7 +17,6 @@ function generateRandomId(len) {
 
 
 function processAst(ast) {
-    var currentElement;
     // If this isn't actual body, recurse with the body
     if (!Array.isArray(ast)) {
       processAst(ast.body);
@@ -35,7 +34,7 @@ function processAst(ast) {
       ) {
         // We got a loop!
         // console.log(currentElement);
-        var ast1 = esp.parseScript("var myvar = Date.now();");
+        var ast1 = esp.parseScript("let myvar = Date.now();");
         var ast2 = esp.parseScript(
           "while(a){if (Date.now() - myvar > 1000) { break;}}"
         );

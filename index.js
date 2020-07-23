@@ -5,9 +5,6 @@ const instrumentCode = require('./tools.js');
 
 let code = `
     while(true){
-        while(true){
-        }
-
     }
 `
 
